@@ -1,0 +1,55 @@
+import java.util.Scanner;
+import static java.lang.System.*;
+
+public class Dankifyer{
+    String input = "";
+
+    public static void main (String []args){
+        Scanner kb = new Scanner(System.in);
+        String input = "";
+        int x=0;
+        int y=0;
+        System.out.println("Welcome to Michael's Dank-ifier v2.0\n\n");
+        System.out.println("**the box thing isnt perfect, you may need to add spaces to even it out after pasting\n\n");
+        System.out.print("Enter your sentence or word to be dank-ified :: ");
+        input=kb.nextLine();
+        int length=input.length();
+
+        
+        while(x!=length){
+            System.out.print(input.charAt(x)+" ");  // classic spaced out
+            x++;}
+        x=0;    
+        System.out.println("\n\n");  
+        while(x!=length){
+            System.out.print(input.charAt(x)+" ");//spaced out again
+            x++;}
+        x=1;
+        while(x!=length){
+        System.out.print("\n"+input.charAt(x));//sets up top word
+        x++;}
+
+        System.out.println("\n\n"); 
+        
+        x=0;    
+        System.out.println("\n\n");  
+        while(x!=length){
+            System.out.print(input.charAt(x)+" ");//spaced out again
+            x++;}
+        x=1;
+        while(x!=(length-1)){//prints a cut off box
+            System.out.print("\n"+input.charAt(x));
+            while(y<length){//prints out 2 spaces per letter
+                System.out.print("  ");
+                y++;}
+            System.out.print(input.charAt(length-(x+1)));
+            if(y==length)y=0;
+            x++;}
+        
+        x=0;
+        System.out.print("\n");
+        while(x!=length){
+            System.out.print(input.charAt((length-1)-x)+" ");  // backwards spaced out
+            x++;}
+    }
+}
